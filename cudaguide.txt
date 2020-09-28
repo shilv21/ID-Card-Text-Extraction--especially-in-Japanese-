@@ -1,0 +1,71 @@
+Cuda installation for training (cuda 16.04)
+First preparation
+-sudo apt-get update
+-sudo apt-get install python3-pip
+-sudo pip3 install tensorflow-gpu
+-sudo pip3 install + <package name>
+
+Cuda installation for training with GPU
+-sudo add-apt-repository ppa:graphics-drivers/ppa ; sudo apt-get update ; sudo apt install nvidia-415
+
+Cuda 8
+wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb
+mv cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb ; sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb ; sudo apt-get update ; sudo apt-get install cuda
+wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/patches/2/cuda-repo-ubuntu1604-8-0-local-cublas-performance-update_8.0.61-1_amd64-deb
+mv cuda-repo-ubuntu1604-8-0-local-cublas-performance-update_8.0.61-1_amd64-deb cuda-repo-ubuntu1604-8-0-local-cublas-performance-update_8.0.61-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-cublas-performance-update_8.0.61-1_amd64.deb
+
+Cuda 9
+wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64-deb
+mv cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64-deb cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64.deb ; sudo apt-key add /var/cuda-repo-<version>/7fa2af80.pub ; sudo apt-get update ; sudo apt-get install cuda
+wget https://developer.nvidia.com/compute/cuda/9.0/Prod/patches/1/cuda-repo-ubuntu1604-9-0-local-cublas-performance-update_1.0-1_amd64-deb ; wget https://developer.nvidia.com/compute/cuda/9.0/Prod/patches/2/cuda-repo-ubuntu1604-9-0-local-cublas-performance-update-2_1.0-1_amd64-deb ; wget https://developer.nvidia.com/compute/cuda/9.0/Prod/patches/3/cuda-repo-ubuntu1604-9-0-local-cublas-performance-update-3_1.0-1_amd64-deb ; wget https://developer.nvidia.com/compute/cuda/9.0/Prod/patches/4/cuda-repo-ubuntu1604-9-0-176-local-patch-4_1.0-1_amd64-deb
+mv cuda-repo-ubuntu1604-9-0-176-local-patch-4_1.0-1_amd64-deb cuda-repo-ubuntu1604-9-0-176-local-patch-4_1.0-1_amd64.deb ; mv cuda-repo-ubuntu1604-9-0-local-cublas-performance-update_1.0-1_amd64-deb cuda-repo-ubuntu1604-9-0-local-cublas-performance-update_1.0-1_amd64.deb ; mv cuda-repo-ubuntu1604-9-0-local-cublas-performance-update-2_1.0-1_amd64-deb cuda-repo-ubuntu1604-9-0-local-cublas-performance-update-2_1.0-1_amd64.deb ; mv cuda-repo-ubuntu1604-9-0-local-cublas-performance-update-3_1.0-1_amd64-deb cuda-repo-ubuntu1604-9-0-local-cublas-performance-update-3_1.0-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1604-9-0-176-local-patch-4_1.0-1_amd64.deb ; sudo apt-key add /var/cuda-repo-9-0-176-local-patch-4/7fa2af80.pub
+sudo dpkg -i cuda-repo-ubuntu1604-9-0-local-cublas-performance-update_1.0-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1604-9-0-local-cublas-performance-update-2_1.0-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1604-9-0-local-cublas-performance-update-3_1.0-1_amd64.deb
+
+Cuda 10.0
+wget https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda-repo-ubuntu1604-10-0-local-10.0.130-410.48_1.0-1_amd64
+mv cuda-repo-ubuntu1604-10-0-local-10.0.130-410.48_1.0-1_amd64 cuda-repo-ubuntu1604-10-0-local-10.0.130-410.48_1.0-1_amd64.deb ; sudo dpkg -i cuda-repo-ubuntu1604-10-0-local-10.0.130-410.48_1.0-1_amd64.deb ; sudo apt-key add /var/cuda-repo-10-0-local-10.0.130-410.48/7fa2af80.pub ; sudo apt-get update ; sudo apt-get install -y cuda
+wget http://developer.download.nvidia.com/compute/cuda/10.0/Prod/patches/1/cuda-repo-ubuntu1604-10-0-local-nvjpeg-update-1_1.0-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1604-10-0-local-nvjpeg-update-1_1.0-1_amd64.deb
+
+Cuda  10.1
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-ubuntu1604.pin
+sudo mv cuda-ubuntu1604.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget http://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda-repo-ubuntu1604-10-1-local-10.1.243-418.87.00_1.0-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1604-10-1-local-10.1.243-418.87.00_1.0-1_amd64.deb
+sudo apt-key add /var/cuda-repo-10-1-local-10.1.243-418.87.00/7fa2af80.pub
+sudo apt-get update
+sudo apt-get -y install cuda
+
+Cudnn installation
+
+Cuda 8
+git clone https://nguyennoiphap@bitbucket.org/nguyennoiphap/cudnn_for_cuda_8.git
+cd cudnn_for_cuda_8
+tar xvzf cudnn-8.0-linux-x64-v5.1.tgz
+sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include
+sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
+sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+nano ~/.bashrc
+
+Drag to the end and copy the end part to this link:
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+export CUDA_HOME=/usr/local/cuda
+Lưu lại rồi thoát ra khỏi nano
+source ~/.bashrc
+
+Cuda 10
+git clone https://nguyennoiphap@bitbucket.org/nguyennoiphap/cudnn_for_cuda_10.git
+cd cudnn_for_cuda_10 ; sudo apt-get install unzip ; unzip libcudnn7.zip
+sudo dpkg -i libcudnn7_7.5.1.10-1+cuda10.0_amd64.deb ; sudo dpkg -i libcudnn7-dev_7.5.1.10-1+cuda10.0_amd64.deb ; sudo dpkg -i libcudnn7-doc_7.5.1.10-1+cuda10.0_amd64.deb
+
+Cuda 10.1
+git clone --single-branch --branch release/cudnn-for-cuda-10.1 https://nguyennoiphap@bitbucket.org/nguyennoiphap/cudnn.git
+cd cudnn
+sudo dpkg -i libcudnn7_7.6.3.30-1+cuda10.1_amd64.deb ; sudo dpkg -i libcudnn7-dev_7.6.3.30-1+cuda10.1_amd64.deb ; sudo dpkg -i libcudnn7-doc_7.6.3.30-1+cuda10.1_amd64.deb
+
+sudo reboot
