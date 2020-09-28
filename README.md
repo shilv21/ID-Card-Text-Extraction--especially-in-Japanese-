@@ -25,6 +25,7 @@ This project is deployed using Google Cloud Platform (GCP). GCP provides free ti
 
 GCP also gives you $300 free credits to use within 1 year. That's a lot of money to use for machine learning and professional application deployment service.
 
+**Cuda installation** Please visit the cudaguide.txt for cuda installation.
 [Google Cloud Platform](https://cloud.google.com/)
 ## Project performance
 The deployed website (Python Django) will take the image of ID card as the input and return the text as the output. As example below:
