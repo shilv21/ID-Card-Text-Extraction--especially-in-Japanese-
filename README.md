@@ -4,6 +4,8 @@ This project developed a method to solve ID card text extraction
   Along with the development of technology, many manual jobs are replacing by machine, especially with AI.
   With this passion, the project tries to solve a problem of automatically ID card text extraction, which will save a lot of time.
 # How it work
+![Alt text](https://github.com/shilv21/ID-Card-Text-Extraction--especially-in-Japanese-/blob/master/process.png)
+
 **Model for extract the characters:** The CRAFT model which detect the characters from the images is based on a research paper.
 
 **Model for OCR:** VGG16 is a popular CNN model used for extracting feature vectors. We applied Dropout for a better performance.
@@ -25,5 +27,5 @@ GCP also gives you $300 free credits to use within 1 year. That's a lot of money
 
 [Google Cloud Platform](https://cloud.google.com/)
 ## Project performance
-The deployed website will take the image of ID card as the input and return the text as the output. As example below:
+The deployed website (Python Django) will take the image of ID card as the input and return the text as the output. As example below:
 ![Alt text](https://github.com/shilv21/ID-Card-Text-Extraction--especially-in-Japanese-/blob/master/demo.png)
