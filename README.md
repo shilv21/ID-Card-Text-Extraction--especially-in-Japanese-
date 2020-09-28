@@ -27,7 +27,7 @@ GCP also gives you $300 free credits to use within 1 year. That's a lot of money
 
 [Google Cloud Platform](https://cloud.google.com/)
 
-**Cuda installation** Please visit the cudaguide.txt for cuda installation.
+**Cuda installation** Please visit the **cudaguide.txt** for cuda installation.
 ## Project performance
 The deployed website (Python Django) will take the image of ID card as the input and return the text as the output. As example below:
 ![Alt text](https://github.com/shilv21/ID-Card-Text-Extraction--especially-in-Japanese-/blob/master/demo.png)
