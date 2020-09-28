@@ -1,5 +1,5 @@
 # ID-Card-Text-Extraction--especially-in-Japanese-
-This project developed a method to solve ID card text extraction
+This project developed a method to solve ID card text extraction.
 # Introduction
   Along with the development of technology, many manual jobs are replacing by machine, especially with AI.
   With this passion, the project tries to solve a problem of automatically ID card text extraction, which will save a lot of time.
